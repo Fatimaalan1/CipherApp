@@ -1,4 +1,6 @@
-2//import java.io.*;
+import java.util.Scanner;
+
+//import java.io.*;
 //import java.util.*;
 
 
@@ -6,16 +8,16 @@ public class Caesar {
 	public static final String alpha = "abcdefghijklmnopqrstuvwxyz";
 	
 	public static String encrypt(String text, int shift) {
-		String Cipher = ""
+		String Cipher = "";
 		if (shift > 26){
-			shift = shift % 26
+			shift = shift % 26;
 		}
 		// TODO Auto-generated constructor stub
 		else if (shift < 0){
 
 		}
 		int length = text.length();
-		for (int i = 0, i < length, i++){
+		for (int i = 0; i < length; i++){
 			char x = text.charAt(i);
 			if (Character.isLetter(x));
 				if (Character.isLowerCase(x)){
@@ -35,11 +37,12 @@ public class Caesar {
 					else{
 						Cipher += shifted_x;
 					}
-				}	
-			}else{
+				}else{
+			
 			Cipher += x;
+			}
 		}
-		return Cipher
+		return Cipher;
 	}
 
 	public static void main(String[] args) {
