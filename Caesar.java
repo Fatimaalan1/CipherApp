@@ -1,4 +1,4 @@
-//import java.io.*;
+2//import java.io.*;
 //import java.util.*;
 
 
@@ -6,7 +6,7 @@ public class Caesar {
 	public static final String alpha = "abcdefghijklmnopqrstuvwxyz";
 	
 	public static String encrypt(String text, int shift) {
-		String cipher = ""
+		String Cipher = ""
 		if (shift > 26){
 			shift = shift % 26
 		}
@@ -18,9 +18,26 @@ public class Caesar {
 		for (int i = 0, i < length, i++){
 			char x = text.charAt(i);
 			if (Character.isLetter(x));
-
-		}else{
-			cipher += x;
+				if (Character.isLowerCase(x)){
+					char shifted_x = (char)(x + shift);
+					if (shifted_x>'z'){
+						Cipher += (char)(x - (26 - shift));
+					}
+					else{
+						Cipher += shifted_x;
+					}
+				}
+				else if (Character.isUpperCase(x)){
+					char shifted_x = (char)(x + shift);
+					if (shifted_x>'Z'){
+						Cipher += (char)(x - (26 - shift));
+					}
+					else{
+						Cipher += shifted_x;
+					}
+				}	
+			}else{
+			Cipher += x;
 		}
 		return Cipher
 	}
